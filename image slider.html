@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Image Slider</title>
+  <link rel="stylesheet" href="image slider.css">
+  </head>
+  <body>
+  <h2>Image Slider</h2>
+
+<img id="slider" src="https://in.pinterest.com/pin/796574252866190514?text=Image+1"><br>
+
+<button onclick="change(-1)">Previous</button>
+<button onclick="change(1)">Next</button>
+
+<script>
+let images = [
+  "https://in.pinterest.com/pin/796574252866190514 ?text=Image+1",
+  "https://via.placeholder.com/400x250?text=Image+2",
+  "https://via.placeholder.com/400x250?text=Image+3"
+];
+
+let index = 0;
+
+function change(step) {
+  index = (index + step + images.length) % images.length;
+  document.getElementById("slider").src = images[index];
+}
+</script>
+
+</body>
+</html>
