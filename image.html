@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Slider</title>
+    <link rel="stylesheet" href="image.css">
+</head>
+
+<body onload="showImage()">
+
+    <h2>Image Slider / Carousel</h2>
+
+    <div class="slider">
+        <img id="slide" src="">
+    </div>
+
+    <button onclick="prevImage()">Previous</button>
+    <button onclick="nextImage()">Next</button>
+
+    <script>
+        let images = ["python 1.png", "python 2.png", "spider.jpg"];
+        let index = 0;
+
+        function showImage() {
+            document.getElementById("slide").src = images[index];
+        }
+
+        function nextImage() {
+            index = (index + 1) % images.length;
+            showImage();
+        }
+
+        function prevImage() {
+            index = (index - 1 + images.length) % images.length;
+            showImage();
+        }
+
+        setInterval(nextImage, 3000);
+    </script>
+
+</body>
+</html>
